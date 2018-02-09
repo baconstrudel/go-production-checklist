@@ -1,6 +1,6 @@
 # Go Production Checklist
 
-This is a work-in-progress checklist for go-services before going to production.
+This is a work-in-progress checklist for go-services to keep in mind before going to production. 
 If you feel like something is missing, please open an issue or PR.
 
 ## Startup and shutdown
@@ -9,7 +9,7 @@ If you feel like something is missing, please open an issue or PR.
 - [ ] Implement graceful-shutdown unless your gateway does that for you
 
 ## Code
-- [ ] Use [Dep] to manage your dependencies (and install them on build, do not check in `vendor/`)
+- [ ] Use [Dep](https://github.com/golang/dep) to manage your dependencies (and install them on build, do not check in `vendor/`)
 - [ ] Configure your logger to output outputs machine-readable logs, to be processed later (e.g. with ELK)
 - [ ] Configure a timeout for all `http.Client`s (the default client has none)
 - [ ] Close all `ReadClosers` (e.g. `http.Client#Do` returns a body that has to be closed manually)
@@ -27,4 +27,5 @@ If you feel like something is missing, please open an issue or PR.
 ## Deployment
 - [ ] Use a minimal `Dockerfile` (multi-stage) if you use Docker
 - [ ] Compile your service(s) w/ `-buildmode=pie` (position independent executables)
-- [ ] Configure SSL so that you get an A+ on [SSL Labs] if you use SSL
+- [ ] Configure SSL so that you get an A+ on [SSL Labs](https://www.ssllabs.com/) if you use SSL
+
