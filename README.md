@@ -11,11 +11,12 @@ If you feel like something is missing, please open an issue or PR.
 - [ ] Implement graceful-shutdown unless your gateway does that for you
 
 ## Code
-- [ ] Use [Dep](https://github.com/golang/dep) to manage your dependencies (and install them on build, do not check in `vendor/`)
-- [ ] Configure your logger to output machine-readable logs, to be processed later (e.g. with ELK)
+- [ ] Use [Dep](https://github.com/golang/dep) to manage your dependencies (and install them on bu
+- [ ] Configure your logger to output structured machine-readable logs, to be processed later (e.g. with ELK)
 - [ ] Configure a timeout for all `http.Client`s (the default client has none)
 - [ ] Close all `ReadClosers` (e.g. `http.Client#Do` returns a body that has to be closed manually)
-- [ ] Implement basic health-check route
+- [ ] Implement health-check
+- [ ] Add CORS if your services exposes an API
 
 ## Middleware
 - [ ] Implement circuit breaker if needed
