@@ -1,4 +1,4 @@
- # Go Production Checklist
+# Go Production Checklist
 
 This is a work-in-progress checklist for go-services to keep in mind before going to production. 
 If you feel like something is missing, please open an issue or PR.
@@ -6,7 +6,7 @@ If you feel like something is missing, please open an issue or PR.
 ## Startup and shutdown
 - [ ] Exit early (`panic`) on fatal errors (e.g. database not found or configuration invalid) 
   - [ ] Check that all configuration values are present and valid on startup
-  - [ ] Ping all services (DB, 3rd party APIs, ...) on startup to verify correct configuration and valid credentials
+  - [ ] Ping required services (DB, 3rd party APIs, ...) on startup to verify correct configuration and valid credentials
 - [ ] Migrate your database on startup
 - [ ] Implement graceful-shutdown unless your gateway does that for you
 
@@ -21,7 +21,7 @@ If you feel like something is missing, please open an issue or PR.
 - [ ] Implement circuit breaker if needed
 - [ ] Implement rate-limiting if needed 
 - [ ] Set up sensible metrics (error-rate, response-time, etc.)
-- [ ] Enforce body-size-limits if needed (if accessible from the web, definitively needed)
+- [ ] Enforce body-size-limits if your gateway is not already doing this
 
 ## Preparation
 - [ ] Load-test and/or benchmark the service, especially memory footprint
